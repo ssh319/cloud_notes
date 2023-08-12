@@ -1,0 +1,15 @@
+# Depencies
+node_modules
+env
+
+# Built for deployment project
+build
+
+# Python cache folders
+__pycache__
+
+# Environment config
+.env
+
+# Package and package-lock json files
+package*

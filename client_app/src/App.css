@@ -1,0 +1,325 @@
+.input-error {
+    color: var(--bs-red);
+    font-size: 17px;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 5px 10px;
+    border: 2px solid var(--bs-red);
+    border-radius: 15px;
+    margin: 2% 30% 2.5%;
+}
+
+.not-found-content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.submit-btn {
+    position: relative;
+    left: 15%;
+    margin-top: 9px;
+}
+
+.note {
+    font-size: 17px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.last-edit-date {
+    font-size: 12px;
+    color: gray;
+    position: relative;
+    float: right;
+    bottom: 10px;
+    opacity: 0.8;
+}
+
+.note-btn {
+    position: relative;
+    bottom: -7px;
+}
+
+.form-head {
+    font-family: system-ui;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--bs-blue);
+}
+
+.auth-window-message {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bs-gray-600);
+    margin-bottom: 25px
+}
+
+.auth-window {
+    position: relative;
+    margin: 0 auto;
+    width: 25% !important;
+    margin-top: 10%;
+    border-radius: .6rem !important;
+}
+
+.desktop-username {
+    display: block;
+    font-style: italic;
+    pointer-events: none;
+    color: var(--bs-primary);
+    padding: 0.5rem 1rem;
+}
+
+.mobile-username {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+    pointer-events: none;
+    color: var(--bs-primary);
+    word-wrap: break-word;
+    margin-bottom: 5%;
+}
+
+
+.auth-input {
+    position: relative;
+    margin: 20px 0px;
+}
+
+.head-form {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.desc-form {
+    resize: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    text-align: center;
+    width: 20% !important;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.search-input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.nav-pills > a {
+    margin: 0px 5px;
+}
+
+/* Light Theme */
+
+.light {
+    background-color: white;
+    color: black;
+    animation: to-light 0.45s;
+}
+
+.light #window {
+    background-color: white;
+    color: black;
+    animation: to-light 0.45s;
+}
+
+.light input {
+    background-color: white;
+    color: black;
+    animation: to-light 0.45s
+}
+
+.light input::placeholder {
+    color: black;
+    opacity: 0.5;
+    animation: to-light 0.45s;
+}
+
+.light textarea {
+    background-color: white;
+    animation: to-light 0.45s;
+}
+
+.light textarea::placeholder {
+    color: black;
+    opacity: 0.5;
+    animation: to-light 0.45s;
+}
+
+/* No Animation (Light) */
+
+.init-light {
+    background-color: white;
+    color: black;
+}
+
+.init-light #window {
+    background-color: white;
+    color: black;
+    
+}
+
+.init-light input {
+    background-color: white;
+    color: black;
+}
+
+.init-light input::placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+.init-light textarea {
+    background-color: white;
+}
+
+.init-light textarea::placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+/* ---------------------- */
+
+/* Dark Theme */
+
+.dark {
+    background-color: black;
+    color: var(--bs-gray-200);
+    animation: to-dark 0.45s;
+}
+
+.dark #window {
+    background-color: black;
+    color: var(--bs-gray-200);
+    animation: to-dark 0.45s;
+}
+
+.dark input {
+    background-color: black;
+    color: var(--bs-gray-200);
+    animation: to-dark 0.45s;
+}
+
+.dark input:focus {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.dark input::placeholder {
+    color: gray;
+    opacity: 0.5;
+    animation: to-dark 0.45s;
+}
+
+.dark textarea {
+    background-color: black;
+    color: var(--bs-gray-200);
+    animation: to-dark 0.45s;
+}
+
+.dark textarea:focus {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.dark textarea::placeholder {
+    color: gray;
+    opacity: 0.5;
+    animation: to-dark 0.45s;
+}
+
+/* No Animation (Dark) */
+
+.init-dark {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark #window {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark input {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark input:focus {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark input::placeholder {
+    color: gray;
+    opacity: 0.5;
+}
+
+.init-dark textarea {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark textarea:focus {
+    background-color: black;
+    color: var(--bs-gray-200);
+}
+
+.init-dark textarea::placeholder {
+    color: gray;
+    opacity: 0.5;
+}
+
+/* ---------------------- */
+
+/* Dark/Light Transitions */
+
+@keyframes to-dark {
+    from {
+        background-color: white;
+        color: black;
+    }
+    
+    to {
+        background-color: black;
+        color: var(--bs-gray-200);
+    }
+}
+
+@keyframes to-light {
+    from {
+        background-color: black;
+        color: var(--bs-gray-200);
+    }
+    
+    to {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Mobile optimization */
+
+@media screen and (max-width: 768px) {
+    .auth-window {
+        width: 55% !important;
+        margin-top: 20%;
+    }
+    
+    .desktop-username {
+        display: none;
+    }
+
+    .mobile-username {
+        display: block;
+    }
+
+    .search-input {
+        width: 35% !important;
+    }
+}
