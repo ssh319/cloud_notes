@@ -13,3 +13,6 @@ __pycache__
 
 # Package and package-lock json files
 package*
+
+# Development database
+db.sqlite3
