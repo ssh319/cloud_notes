@@ -87,11 +87,7 @@ const SignUpPage = () => {
                         </ul>
                     }
 
-                    <button type="submit" className="btn btn-default" style={{
-                        backgroundColor: 'var(--bs-blue)',
-                        color: 'white',
-                        marginBottom: '25px',
-                    }}>Зарегистрироваться</button>
+                    <button type="submit" className="btn btn-primary" style={{ marginBottom: '25px' }}>Зарегистрироваться</button>
                 </form>
                 <span style={{ fontSize: '14px' }}>
                     Уже есть аккаунт? <Link to="/auth/sign-in">Выполните вход</Link>

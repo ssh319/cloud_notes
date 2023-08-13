@@ -89,11 +89,7 @@ const LoginPage = () => {
                         </ul>
                     }
 
-                    <button type="submit" className="btn btn-default" style={{
-                        backgroundColor: 'var(--bs-blue)',
-                        color: 'white',
-                        marginBottom: '25px',
-                    }}>Войти</button>
+                    <button type="submit" className="btn btn-primary" style={{ marginBottom: '25px' }}>Войти</button>
                 </form>
                 <span style={{ fontSize: '14px' }}>
                     Нет аккаунта? <Link to="/auth/sign-up">Пройдите регистрацию</Link>
