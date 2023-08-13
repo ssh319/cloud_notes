@@ -1,12 +1,12 @@
 # Depencies
-node_modules
-env
+node_modules/
+env/
 
-# Built for deployment project
-build
+# React Build
+build/
 
 # Python cache folders
-__pycache__
+__pycache__/
 
 # Environment config
 .env
