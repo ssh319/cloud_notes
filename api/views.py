@@ -14,8 +14,7 @@ class NotesAPIView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     
-    def get(self, request, **kwargs):
-        pk = kwargs.get('pk')
+    def get(self, request, pk=None):
         if pk is not None:
             serializer = NotesSerializer(Note.objects.filter(user=request.user).get(id=pk))
         else:
