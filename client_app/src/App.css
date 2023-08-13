@@ -21,7 +21,7 @@
 }
 
 .note {
-    font-size: 17px;
+    font-size: 19px !important;
     margin: 0 auto;
     width: 95%;
 }
