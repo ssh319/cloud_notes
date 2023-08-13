@@ -9,7 +9,7 @@ Notes Web application made as a Fullstack pet project
 - Creating & editing notes with saving the last edit date, deleting
 - Complete authentication
 
-### Additional feautures
+### Additional features
 - Filtering notes by text occurences
 - Dark/Light theme choice
 
