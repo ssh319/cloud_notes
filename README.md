@@ -31,7 +31,7 @@ Notes Web application made as a Fullstack pet project
 3. Database
     - PostgreSQL RDBMS
     - Django ORM
-    - SQLite3 as Development DB
+    - SQLite3 as Development DBMS
 
 
 4. Version Control

@@ -11,8 +11,5 @@ __pycache__/
 # Environment config
 .env
 
-# Package and package-lock json files
-package*
-
 # Development database
 db.sqlite3
