@@ -41,4 +41,4 @@ Notes Web application made as a Fullstack pet project
 
 ## GIF Demo
 
-<img style="display: block; margin-left: auto; margin-right: auto; margin-top: 5%" src="./demo.gif" width="720" height="480"/>
+<img style="display: block; margin-left: auto; margin-right: auto; margin-top: 5%" src="./demo.gif" width="960" height="540"/>
