@@ -4,11 +4,11 @@ import axios from 'axios';
 class API {
     /*
         API class for a single instance-client, 
-        providing more abstract API calls for app.
+        providing more abstract API calls for application.
     */
 
     constructor() {
-        // protocol://api.production-server-domain-name
+        // protocol://api.serverDomainName
         this.baseURL = "http://localhost:8000";
     }
 

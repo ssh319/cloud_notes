@@ -35,10 +35,6 @@ const SignUpPage = () => {
         event.preventDefault();
         let inputErrors = [];
 
-        if (!username || !password || !confirmPassword) {
-            inputErrors.push("Необходимо заполнить каждое поле");
-        }
-
         if (password !== confirmPassword) {
             inputErrors.push("Введённые пароли не совпадают");
         }
@@ -67,18 +63,17 @@ const SignUpPage = () => {
     };
 
     return (
-        <>
-            <div id="window" className='form-control auth-window'>
+        <main>
+            <section id="window" className='form-control auth-window'>
                 <h2 style={{ textAlign: 'center', margin: '20px 0px' }}>Регистрация</h2>
                 <form onSubmit={confirmSignUp}>
-                    <input onChange={handleUsernameChange} placeholder="Придумайте уникальный логин" type="text" className="form-control auth-input" />
-                    <input onChange={handlePasswordChange} placeholder="Создайте пароль" type="password" className="form-control auth-input" />
-                    <input onChange={handleConfirmPasswordChange} placeholder="Подтвердите пароль" type="password" className="form-control auth-input" />
+                    <input onChange={handleUsernameChange} placeholder="Придумайте уникальный логин" type="text" className="form-control auth-input" required />
+                    <input onChange={handlePasswordChange} placeholder="Создайте пароль" type="password" className="form-control auth-input" required />
+                    <input onChange={handleConfirmPasswordChange} placeholder="Подтвердите пароль" type="password" className="form-control auth-input" required />
 
                     {errors &&
                         <ul style={{ color: 'red', fontFamily: 'sans-serif' }}>
-                            {
-                                errors.map((error, id) => (
+                            {errors.map((error, id) => (
                                     <li key={id}>
                                         {error}
                                     </li>
@@ -92,8 +87,8 @@ const SignUpPage = () => {
                 <span style={{ fontSize: '14px' }}>
                     Уже есть аккаунт? <Link to="/auth/sign-in">Выполните вход</Link>
                 </span>
-            </div>
-        </>
+            </section>
+        </main>
     )
 };
 

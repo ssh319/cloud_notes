@@ -37,34 +37,29 @@ const LoginPage = () => {
 
         let inputErrors = [];
 
-        if (!username || !password) {
-            inputErrors.push("Необходимо заполнить каждое поле");
+        try {
+            let [token, user] = await apiClient.authenticateUser({ username, password });
+            setCookie("ca3utC7", token, { path: "/" });
+            setCookie("username", user, { path: "/" });
+            navigate("/");
         }
-
-        if (!inputErrors.length) {
-            try {
-                let [token, user] = await apiClient.authenticateUser({ username, password });
-                setCookie("ca3utC7", token, { path: "/" });
-                setCookie("username", user, { path: "/" });
-                navigate("/");
+        
+        catch (err) {
+            if (err.code === "ERR_NETWORK") {
+                inputErrors.push("Ошибка получения данных с сервера");
             }
-            
-            catch (err) {
-                if (err.code === "ERR_NETWORK") {
-                    inputErrors.push("Ошибка получения данных с сервера");
-                }
 
-                else if (err.response?.status === 400) {
-                    inputErrors.push("Введены некорректные или несуществующие данные");
-                }
+            else if (err.response?.status === 400) {
+                inputErrors.push("Введены некорректные или несуществующие данные");
             }
         }
+
         setErrors(inputErrors);
     }
     
     return (
-        <>
-            <div id="window" className='form-control auth-window'>
+        <main>
+            <section id="window" className='form-control auth-window'>
                 <h2 style={{ textAlign: 'center', margin: '20px 0px' }}>Авторизация</h2>
 
                 {message &&
@@ -74,13 +69,12 @@ const LoginPage = () => {
                 }
 
                 <form onSubmit={confirmAuthorization}>
-                    <input onChange={handleUsernameChange} placeholder="Логин" type="text" className="form-control auth-input" />
-                    <input onChange={handlePasswordChange} placeholder="Пароль" type="password" className="form-control auth-input" />
+                    <input onChange={handleUsernameChange} placeholder="Логин" type="text" className="form-control auth-input" required />
+                    <input onChange={handlePasswordChange} placeholder="Пароль" type="password" className="form-control auth-input" required />
 
                     {errors &&
                         <ul style={{ color: 'red', fontFamily: 'sans-serif' }}>
-                            {
-                                errors.map((error, id) => (
+                            {errors.map((error, id) => (
                                     <li key={id}>
                                         {error}
                                     </li>
@@ -94,8 +88,8 @@ const LoginPage = () => {
                 <span style={{ fontSize: '14px' }}>
                     Нет аккаунта? <Link to="/auth/sign-up">Пройдите регистрацию</Link>
                 </span>
-            </div>
-        </>
+            </section>
+        </main>
     )
 }
 

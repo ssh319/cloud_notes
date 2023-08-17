@@ -54,10 +54,10 @@ const Header = () => {
     return (
         <>
             <header id="header" className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <p className="align-items-center mb-3 mb-md-0 me-md-auto" style={{ color: "var(--bs-blue)" }} >
+                <p className="align-items-center mb-3 mb-md-0 me-md-auto" style={{ color: "var(--bs-blue)" }}>
                     <svg className="bi me-2" width="40" height="32" />
                     <span className="fs-4">Текущее время:
-                        <span id="timer"> 00:00:00</span>
+                        <time id="timer"> 00:00:00</time>
                     </span>
                 </p>
                 <ul className="nav nav-pills" style={{ marginRight: "10px" }}>

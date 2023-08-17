@@ -9,9 +9,9 @@ const NotFound = () => {
     }, [])
 
     return (
-        <>
+        <main>
             <div style={{ fontFamily: 'monospace', color: 'var(--bs-blue)' }}>
-                <div className='not-found-content' style={{ top: '45%',left: '38%' }}>
+                <div className='not-found-content' style={{ top: '45%', left: '38%' }}>
                     <strong style={{ fontSize: '2.8vw' }}>Страница не найдена.</strong><br />
                     <strong style={{ fontSize: '5vw' }}>404</strong>
                 </div>
@@ -19,7 +19,7 @@ const NotFound = () => {
                     <strong style={{ fontSize: '8vw' }}>;(</strong>
                 </div>
             </div>
-        </>
+        </main>
     );
 };
 

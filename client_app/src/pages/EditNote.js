@@ -67,7 +67,7 @@ const EditNote = () => {
         catch (err) {
             if (err.response.status === 400) {
                 setError(
-                    "Некорректный ввод. Максимально допустимое количество символов для полей заголовка и текста заметки - 50 и 500 символов соответственно. Пустые поля не разрешены."
+                    "Некорректный ввод. Максимально допустимое количество символов для полей заголовка и текста заметки - 50 и 500 символов соответственно."
                 );
             }
         }
@@ -82,9 +82,9 @@ const EditNote = () => {
     };
 
     return (
-        <>
+        <main>
             <h2 className='form-head'>
-                Редактирование заметки "{note && note.head}"
+                Редактирование заметки "{note?.head}"
             </h2>
 
             {error &&
@@ -94,12 +94,12 @@ const EditNote = () => {
             }
 
             <form onSubmit={(event) => saveNote(event, note.id)}>
-                <input onChange={handleHeadChange} className="form-control head-form" id="head" type="text" placeholder="Заголовок" style={{ width: '70%' }} />
-                <textarea onChange={handleDescChange} rows="4" className="form-control desc-form" id="desc" type="text" placeholder="Описание" style={{ width: '70%' }} />
+                <input onChange={handleHeadChange} className="form-control head-form" id="head" type="text" placeholder="Заголовок" style={{ width: '70%' }} required />
+                <textarea onChange={handleDescChange} rows="4" className="form-control desc-form" id="desc" type="text" placeholder="Описание" style={{ width: '70%' }} required />
                 <button type="submit" className="btn btn-primary submit-btn">Сохранить</button>
                 <Link to="/" className="btn btn-secondary submit-btn" style={{ left: '15.5%', padding: '6px 20px' }}>Отмена</Link>
             </form>
-        </>
+        </main>
     );
 };
 

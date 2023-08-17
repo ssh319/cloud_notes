@@ -35,7 +35,7 @@ const AddNote = () => {
         catch (err) {
             if (err.response.status === 400) {
                 setError(
-                    "Некорректный ввод. Максимально допустимое количество символов для полей заголовка и текста заметки - 50 и 500 символов соответственно. Пустые поля не разрешены."
+                    "Некорректный ввод. Максимально допустимое количество символов для полей заголовка и текста заметки - 50 и 500 символов соответственно."
                 );
             }
         }
@@ -50,7 +50,7 @@ const AddNote = () => {
     };
 
     return (
-        <>
+        <main>
             <h2 className='form-head'>
                 Создание новой заметки.
             </h2>
@@ -62,11 +62,11 @@ const AddNote = () => {
             }
 
             <form onSubmit={saveNote}>
-                <input onChange={handleHeadChange} className="form-control head-form" id="head" type="text" placeholder="Заголовок" style={{ width: '70%' }} />
-                <textarea onChange={handleDescChange} className="form-control desc-form" id="desc" type="text" placeholder="Описание" rows="4" style={{ width: '70%' }} />
+                <input onChange={handleHeadChange} className="form-control head-form" id="head" type="text" placeholder="Заголовок" style={{ width: '70%' }} required />
+                <textarea onChange={handleDescChange} className="form-control desc-form" id="desc" type="text" placeholder="Описание" rows="4" style={{ width: '70%' }} required />
                 <button type="submit" className="btn btn-success submit-btn">Добавить</button>
             </form>
-        </>
+        </main>
     )
 };
 

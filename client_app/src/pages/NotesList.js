@@ -61,7 +61,7 @@ const NotesList = () => {
 
     
     return (
-        <>
+        <main>
             <input className="form-control search-input" onChange={searchNotes} type="text" placeholder="Поиск по заметкам" />
             
             {error &&
@@ -71,24 +71,22 @@ const NotesList = () => {
             }
 
             {filteredNotes.map((note) => (
-                <div key={note.id}>
-                    <div className="alert note" style={{ border: '1px solid var(--bs-blue)', fontSize: '17px' }}>
-                        <span id="note_date" className='last-edit-date'>
-                            Последнее редактирование: {new Date(note.timestamp).toLocaleString()}
-                        </span>
+                <section key={note.id} className="alert note" style={{ border: '1px solid var(--bs-blue)', fontSize: '17px' }}>
+                    <span id="note_date" className='last-edit-date'>
+                        Последнее редактирование: <time dateTime={note.timestamp}> {new Date(note.timestamp).toLocaleString()} </time>
+                    </span>
 
-                        <div style={{ wordWrap: 'break-word' }} >
-                            <h5>• {note.head}</h5>
-                            <span>{note.desc}</span>
-                        </div>
+                    <article style={{ wordWrap: 'break-word' }} >
+                        <h5>• {note.head}</h5>
+                        <p>{note.desc}</p>
+                    </article>
 
-                        <Link to={`edit/${note.id}`} className="btn btn-primary note-btn" style={{ padding: '2px 22px' }}>Редактировать запись</Link>
-                        <button onClick={() => deleteNote(note)} className="btn btn-danger note-btn" style={{ padding: '2px 48px', left: '5px' }}>Удалить запись</button>
+                    <Link to={`edit/${note.id}`} className="btn btn-primary note-btn" style={{ padding: '2px 22px' }}>Редактировать запись</Link>
+                    <button onClick={() => deleteNote(note)} className="btn btn-danger note-btn" style={{ padding: '2px 48px', left: '5px' }}>Удалить запись</button>
 
-                    </div>
-                </div>
+                </section>
             ))}
-        </>
+        </main>
     );
 };
 
