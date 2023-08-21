@@ -34,7 +34,7 @@ const NotesList = () => {
 
     useEffect(() => {
         document.title = "Мои заметки";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
         getNotes();
     }, [getNotes]);
 

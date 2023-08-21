@@ -5,7 +5,7 @@ import '../App.css';
 const NotFound = () => {
     useEffect(() => {
         document.title = "Страница не найдена";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
     }, [])
 
     return (

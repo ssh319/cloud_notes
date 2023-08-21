@@ -116,166 +116,54 @@
 
 /* Light Theme */
 
-.light {
+.light,
+.light #window,
+.light input,
+.light input:focus,
+.light textarea,
+.light textarea:focus {
     background-color: white;
     color: black;
     animation: to-light 0.45s;
 }
 
-.light #window {
-    background-color: white;
-    color: black;
-    animation: to-light 0.45s;
-}
-
-.light input {
-    background-color: white;
-    color: black;
-    animation: to-light 0.45s
-}
-
-.light input::placeholder {
+.light input::placeholder, .light textarea::placeholder {
     color: black;
     opacity: 0.5;
     animation: to-light 0.45s;
 }
-
-.light textarea {
-    background-color: white;
-    animation: to-light 0.45s;
-}
-
-.light textarea::placeholder {
-    color: black;
-    opacity: 0.5;
-    animation: to-light 0.45s;
-}
-
-/* No Animation (Light) */
-
-.init-light {
-    background-color: white;
-    color: black;
-}
-
-.init-light #window {
-    background-color: white;
-    color: black;
-    
-}
-
-.init-light input {
-    background-color: white;
-    color: black;
-}
-
-.init-light input::placeholder {
-    color: black;
-    opacity: 0.5;
-}
-
-.init-light textarea {
-    background-color: white;
-}
-
-.init-light textarea::placeholder {
-    color: black;
-    opacity: 0.5;
-}
-
-/* ---------------------- */
 
 /* Dark Theme */
 
-.dark {
-    background-color: black;
-    color: var(--bs-gray-200);
-    animation: to-dark 0.45s;
-}
-
-.dark #window {
-    background-color: black;
-    color: var(--bs-gray-200);
-    animation: to-dark 0.45s;
-}
-
-.dark input {
-    background-color: black;
-    color: var(--bs-gray-200);
-    animation: to-dark 0.45s;
-}
-
-.dark input:focus {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.dark input::placeholder {
-    color: gray;
-    opacity: 0.5;
-    animation: to-dark 0.45s;
-}
-
-.dark textarea {
-    background-color: black;
-    color: var(--bs-gray-200);
-    animation: to-dark 0.45s;
-}
-
+.dark,
+.dark #window,
+.dark input,
+.dark input:focus,
+.dark textarea,
 .dark textarea:focus {
     background-color: black;
     color: var(--bs-gray-200);
+    animation: to-dark 0.45s;
 }
 
-.dark textarea::placeholder {
+.dark input::placeholder, .dark textarea::placeholder {
     color: gray;
     opacity: 0.5;
     animation: to-dark 0.45s;
 }
 
-/* No Animation (Dark) */
+/* No theme animation on page load */
 
-.init-dark {
-    background-color: black;
-    color: var(--bs-gray-200);
+.init,
+.init #window,
+.init input,
+.init input:focus,
+.init input::placeholder,
+.init textarea,
+.init textarea:focus,
+.init textarea::placeholder {
+    animation-duration: 0ms !important;
 }
-
-.init-dark #window {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.init-dark input {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.init-dark input:focus {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.init-dark input::placeholder {
-    color: gray;
-    opacity: 0.5;
-}
-
-.init-dark textarea {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.init-dark textarea:focus {
-    background-color: black;
-    color: var(--bs-gray-200);
-}
-
-.init-dark textarea::placeholder {
-    color: gray;
-    opacity: 0.5;
-}
-
-/* ---------------------- */
 
 /* Dark/Light Transitions */
 

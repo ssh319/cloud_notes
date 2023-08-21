@@ -9,7 +9,7 @@ import { apiClient } from '../components/apiClient';
 const LoginPage = () => {
     useEffect(() => {
         document.title = "Авторизация";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
     }, []);
 
     const navigate = useNavigate();

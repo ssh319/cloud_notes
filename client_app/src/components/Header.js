@@ -13,7 +13,7 @@ const Header = () => {
 
     let [theme, setTheme] = useState(localStorage.getItem("theme"));
 
-    // Cookie setter is skipped
+    // Cookie setter skipped
     let [cookies, , removeCookie] = useCookies(["ca3utC7", "username"]);
     
     const navigate = useNavigate();
@@ -25,8 +25,9 @@ const Header = () => {
     };
 
     let toggleTheme = () => {
+        document.body.classList.remove("init");
         setTheme(
-            (theme === "init-light" || theme === "light") ? "dark" : "light"
+            (theme === "light") ? "dark" : "light"
         )
     };
 
@@ -40,15 +41,15 @@ const Header = () => {
         updateTimer();
         setInterval(updateTimer, 1000);
 
-        // Class with the 'init' prefix made as a separate CSS class to have no animation during page load.
-        setTheme("init-" + localStorage.getItem("theme"));
+        document.body.classList.add("init");
+        setTheme(localStorage.getItem("theme"));
     }, []);
 
     useEffect(() => {
-        document.body.className = theme;
+        document.body.classList.add(theme);
+        document.body.classList.remove((theme === "light") ? "dark" : "light");
         
-        // Slicing off the 'init' prefix if it is.
-        localStorage.setItem("theme", theme.slice(0, 5) !== "init-" ? theme : theme.slice(5));
+        localStorage.setItem("theme", theme);
     }, [theme]);
     
     return (

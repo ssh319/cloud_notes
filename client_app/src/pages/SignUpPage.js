@@ -8,7 +8,7 @@ import { apiClient } from '../components/apiClient';
 const SignUpPage = () => {
     useEffect(() => {
         document.title = "Регистрация";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
     }, []);
 
     const navigate = useNavigate();

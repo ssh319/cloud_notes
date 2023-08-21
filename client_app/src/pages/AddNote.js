@@ -17,7 +17,7 @@ const AddNote = () => {
         }
 
         document.title = "Создать заметку";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
     }, [cookies, navigate]);
 
     let [head, setHead] = useState("");

@@ -22,7 +22,7 @@ const EditNote = () => {
 
     useEffect(() => {
         document.title = "Редактирование заметки";
-        document.body.className = "init-" + localStorage.getItem("theme");
+        document.body.classList.add("init");
         let getNote = async () => {
             try {
                 let data = await apiClient.getNoteForEdit(params.id, cookies.ca3utC7);
