@@ -15,7 +15,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const message = location.state ? location.state.message : null;
+    const message = location.state?.message;
 
     let [username, setUsername] = useState("");
     let [password, setPassword] = useState("");
