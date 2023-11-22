@@ -37,11 +37,11 @@ class API {
     }
 
     async registerUser(data) {
-        await axios.post(`${this.baseURL}/users/signup`, data);
+        await axios.post(`${this.baseURL}/auth/signup`, data);
     }
 
     async authenticateUser(data) {
-        let response = await axios.post(`${this.baseURL}/users/login`, data);
+        let response = await axios.post(`${this.baseURL}/auth/login`, data);
         const token = await response.data.token;
         const username = await response.data.username;
         return [token, username];

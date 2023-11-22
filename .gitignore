@@ -1,3 +1,6 @@
+# VS Code parameters folder
+.vscode/
+
 # Depencies
 node_modules/
 env/
