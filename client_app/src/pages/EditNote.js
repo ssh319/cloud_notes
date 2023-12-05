@@ -18,14 +18,14 @@ const EditNote = () => {
     let [error, setError] = useState("");
     let [head, setHead] = useState("");
     let [desc, setDesc] = useState("");
-    let [cookies] = useCookies(["ca3utC7", "username"]);
+    let [cookies] = useCookies(["token", "username"]);
 
     useEffect(() => {
         document.title = "Редактирование заметки";
         document.body.classList.add("init");
         let getNote = async () => {
             try {
-                let data = await apiClient.getNoteForEdit(params.id, cookies.ca3utC7);
+                let data = await apiClient.getNoteForEdit(params.id, cookies.token);
                 setNote(data);
             }
 
@@ -60,7 +60,7 @@ const EditNote = () => {
         event.preventDefault();
 
         try {
-            await apiClient.saveChangedNote({ head, desc }, id, cookies.ca3utC7);
+            await apiClient.saveChangedNote({ head, desc }, id, cookies.token);
             navigate("/");
         }
         

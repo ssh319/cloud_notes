@@ -14,7 +14,7 @@ const Header = () => {
     let [theme, setTheme] = useState(localStorage.getItem("theme"));
 
     // Cookie setter skipped
-    let [cookies, , removeCookie] = useCookies(["ca3utC7", "username"]);
+    let [cookies, , removeCookie] = useCookies(["token", "username"]);
     
     const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Header = () => {
     };
 
     let logOut = () => {
-        removeCookie("ca3utC7", { path: "/" });
+        removeCookie("token", { path: "/" });
         removeCookie("username", { path: "/" });
         navigate("/auth/sign-in");
     };

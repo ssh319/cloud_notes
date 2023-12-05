@@ -9,7 +9,7 @@ const AddNote = () => {
 
     const navigate = useNavigate();
 
-    let [cookies] = useCookies(["ca3utC7", "username"]);
+    let [cookies] = useCookies(["token", "username"]);
 
     useEffect(() => {
         if (!cookies.username) {
@@ -28,7 +28,7 @@ const AddNote = () => {
         event.preventDefault();
         
         try {
-            await apiClient.createNote({ head, desc }, cookies.ca3utC7);
+            await apiClient.createNote({ head, desc }, cookies.token);
             navigate("/");
         }
 

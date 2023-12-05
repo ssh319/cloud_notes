@@ -12,12 +12,12 @@ const NotesList = () => {
     let [filteredNotes, setFilteredNotes] = useState(notes);
     let [search, setSearch] = useState("");
     let [error, setError] = useState("");
-    let [cookies] = useCookies(["ca3utC7", "username"]);
+    let [cookies] = useCookies(["token", "username"]);
     const navigate = useNavigate();
 
     let getNotes = useCallback( async () => {
         try {
-            let data = await apiClient.getNotes(cookies.ca3utC7);
+            let data = await apiClient.getNotes(cookies.token);
             setNotes(data);
         }
         
@@ -54,7 +54,7 @@ const NotesList = () => {
 
     let deleteNote = async (note) => {
         if (window.confirm(`Вы уверены, что хотите удалить заметку "${note.head}"?`)) {
-            await apiClient.deleteNote(note.id, cookies.ca3utC7);
+            await apiClient.deleteNote(note.id, cookies.token);
             getNotes();
         };
     };

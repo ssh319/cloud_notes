@@ -22,7 +22,7 @@ const LoginPage = () => {
     let [errors, setErrors] = useState([]);
 
     // Getting the cookie setter (2nd element) from array.
-    let setCookie = useCookies(["ca3utC7", "username"])[1]
+    let setCookie = useCookies(["token", "username"])[1]
 
     let handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -39,7 +39,7 @@ const LoginPage = () => {
 
         try {
             let [token, user] = await apiClient.authenticateUser({ username, password });
-            setCookie("ca3utC7", token, { path: "/" });
+            setCookie("token", token, { path: "/" });
             setCookie("username", user, { path: "/" });
             navigate("/");
         }
